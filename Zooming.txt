@@ -1,0 +1,48 @@
+CODE (FOR ZOOMING):
+clear all;
+close all;
+clc;
+b=imread('cameraman.tif');
+s=size(b);
+c=[];
+d=[];
+zoom=input('enter zooming factor');
+
+for n=1:s(1,1)
+    for p=1:zoom
+        c=[c;b(n,:)];
+    end
+end
+
+
+for m=1:s(1,2)
+    for p=1:zoom
+        d=[d,c(:,m)];
+    end
+end
+
+imshow(d);
+
+CODE (FOR SHRINKING):
+clear all;
+close all;
+clc;
+b=imread('cameraman.tif');
+s=size(b);
+c=[];
+d=[];
+zoom=input('enter zooming out factor');
+
+for n=1:zoom:s(1,1)
+ 
+        c=[c;b(n,:)];
+end
+ 
+for m=1:zoom:s(1,2)
+   
+        d=[d,c(:,m)];
+end
+imshow(d);
+title('after zooming out');
+         
+OUTPUT:
